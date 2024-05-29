@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -11,12 +11,19 @@ export class AppComponent {
 
   sitename = 'Hello World';
 
+  constructor(private cdr: ChangeDetectorRef) {
+  }
+
   changeTitle(newTitle: string) {
     this.sitename = newTitle;
   }
 
   clearKeyword() {
+    this.keyword = '1';
+    this.cdr.detectChanges();
+
     this.keyword = '';
+    this.cdr.detectChanges();
   }
 
   confirmKeyword(newKeyword: string) {
