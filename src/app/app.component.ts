@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Article } from '../interfaces/article';
 
 @Component({
   selector: 'app-root',
@@ -47,13 +48,4 @@ export class AppComponent implements OnInit {
 
 
 
-export interface Article {
-  id:              number;
-  href:            string;
-  title:           string;
-  date:            string;
-  author:          string;
-  category:        string;
-  "category-link": string;
-  summary:         string;
-}
+
