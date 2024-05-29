@@ -11,11 +11,14 @@ export class AppComponent {
 
   sitename = 'Hello World';
 
+  counter = 0;
+
   constructor(private cdr: ChangeDetectorRef) {
   }
 
   changeTitle(newTitle: string) {
     this.sitename = newTitle;
+    this.counter++;
   }
 
   clearKeyword() {
