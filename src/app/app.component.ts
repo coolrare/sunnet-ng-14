@@ -7,16 +7,22 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  keyword = 'Angular 14'
+  keyword = 'Angular 14';
 
-  sitename = 'Hello World'
+  sitename = 'Hello World';
 
   changeTitle(newTitle: string) {
-    this.sitename = newTitle
+    this.sitename = newTitle;
   }
 
   clearKeyword() {
-    this.keyword = ''
+    this.keyword = '';
+  }
+
+  confirmKeyword(event: Event) {
+    let kev = <KeyboardEvent>event;
+    let newKeyword: string = (<HTMLInputElement>event.target).value;
+    this.keyword = newKeyword;
   }
 
 }
