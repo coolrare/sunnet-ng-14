@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'sunnet-ng-14';
+
+  sitename = 'Hello World'
+
+  changeTitle(newTitle: string) {
+    this.sitename = newTitle
+  }
+
 }
