@@ -19,9 +19,7 @@ export class AppComponent {
     this.keyword = '';
   }
 
-  confirmKeyword(event: Event) {
-    let kev = <KeyboardEvent>event;
-    let newKeyword: string = (<HTMLInputElement>event.target).value;
+  confirmKeyword(newKeyword: string) {
     this.keyword = newKeyword;
   }
 
