@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Article } from '../interfaces/article';
 import { subscribeOn } from 'rxjs';
+import { DataService } from './data.service';
 
 @Component({
   selector: 'app-root',
@@ -19,13 +20,12 @@ export class AppComponent implements OnInit {
 
   data: Article[] = [];
 
-  constructor(private cdr: ChangeDetectorRef, private http: HttpClient) {
+  constructor(private cdr: ChangeDetectorRef, private datasvc: DataService) {
   }
 
   ngOnInit() {
-    this.http.get<Article[]>('/api/articles.json').subscribe((data) => {
+    this.datasvc.getArticles().subscribe((data) => {;
       this.data = data;
-      // console.log(data);
     });
   }
 
