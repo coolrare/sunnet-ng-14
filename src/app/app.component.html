@@ -11,6 +11,8 @@
 
         <pre>NT${{ 12345 | number }}</pre>
 
+        <pre>{{ data$ | async | json }}</pre>
+
         <!-- Article START-->
         <article *ngFor="let item of (data$ | async); let i=index" class="post" id="post{{i}}">
           <header class="post-header">

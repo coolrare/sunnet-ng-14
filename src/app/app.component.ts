@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Article } from '../interfaces/article';
-import { Observable, of, subscribeOn } from 'rxjs';
+import { Observable, of, shareReplay, subscribeOn } from 'rxjs';
 import { DataService } from './data.service';
 
 @Component({
@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.data$ = this.datasvc.getArticles();
+    this.data$ = this.datasvc.getArticles().pipe(shareReplay(1));
   }
 
   clearKeyword() {
