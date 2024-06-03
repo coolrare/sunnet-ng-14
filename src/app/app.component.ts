@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Article } from '../interfaces/article';
-import { subscribeOn } from 'rxjs';
+import { Observable, of, subscribeOn } from 'rxjs';
 import { DataService } from './data.service';
 
 @Component({
@@ -18,15 +18,13 @@ export class AppComponent implements OnInit {
 
   keyword = 'Angular 14';
 
-  data: Article[] = [];
+  data$: Observable<Article[]> = of([]);
 
   constructor(private cdr: ChangeDetectorRef, private datasvc: DataService) {
   }
 
   ngOnInit() {
-    this.datasvc.getArticles().subscribe((data) => {;
-      this.data = data;
-    });
+    this.data$ = this.datasvc.getArticles();
   }
 
   clearKeyword() {

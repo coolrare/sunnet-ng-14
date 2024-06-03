@@ -12,7 +12,7 @@
         <pre>NT${{ 12345 | number }}</pre>
 
         <!-- Article START-->
-        <article *ngFor="let item of data; let i=index" class="post" id="post{{i}}">
+        <article *ngFor="let item of (data$ | async); let i=index" class="post" id="post{{i}}">
           <header class="post-header">
             <h2 class="post-title">
               <a [href]="item.href">{{item.title}}</a>
