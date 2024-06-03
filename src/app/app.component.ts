@@ -11,10 +11,6 @@ export class AppComponent implements OnInit {
 
   keyword = 'Angular 14';
 
-  sitename = 'Hello World';
-
-  counter = 0;
-
   data: Article[] = [];
 
   constructor(private cdr: ChangeDetectorRef, private http: HttpClient) {
@@ -25,11 +21,6 @@ export class AppComponent implements OnInit {
       this.data = data;
       // console.log(data);
     });
-  }
-
-  changeTitle(newTitle: string) {
-    this.sitename = newTitle;
-    this.counter++;
   }
 
   clearKeyword() {

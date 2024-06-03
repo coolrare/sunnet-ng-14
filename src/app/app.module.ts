@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
 import { RocDatePipe } from './roc-date.pipe';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
-    RocDatePipe
+    RocDatePipe,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
