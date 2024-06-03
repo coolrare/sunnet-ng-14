@@ -9,6 +9,8 @@ import { Article } from '../interfaces/article';
 })
 export class AppComponent implements OnInit {
 
+  title = 'Will Home';
+
   keyword = 'Angular 14';
 
   data: Article[] = [];

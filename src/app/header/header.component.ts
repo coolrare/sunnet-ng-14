@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  @Input()
   sitename = 'Hello World';
+
+  @Output()
+  titleChanged = new EventEmitter<string>();
 
   counter = 0;
 
@@ -17,7 +21,8 @@ export class HeaderComponent implements OnInit {
   }
 
   changeTitle(newTitle: string) {
-    this.sitename = newTitle;
+    this.titleChanged.emit(newTitle);
+
     this.counter++;
   }
 

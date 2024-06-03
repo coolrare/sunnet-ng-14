@@ -1,4 +1,6 @@
-<app-header></app-header>
+<app-header [sitename]="title" (titleChanged)="title=$event"></app-header>
+
+<pre>{{title}}</pre>
 
 <!-- CONTAINER START-->
 <section class="container">
