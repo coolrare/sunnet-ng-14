@@ -1,6 +1,6 @@
-<app-header [sitename]="title" (titleChanged)="title=$event"></app-header>
+<app-header [siteinfo]="siteinfo" (titleChanged)="siteinfo.sitename=$event"></app-header>
 
-<pre>{{title}}</pre>
+<pre>{{siteinfo.sitename}}</pre>
 
 <!-- CONTAINER START-->
 <section class="container">
@@ -195,4 +195,4 @@
 </section>
 <!-- CONTAINER END -->
 
-<app-footer (click)="title='123'"></app-footer>
+<app-footer (click)="changeName('123')"></app-footer>

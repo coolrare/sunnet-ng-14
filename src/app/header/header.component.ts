@@ -7,7 +7,10 @@ import { Component, EventEmitter, Input, Output, OnInit, OnChanges, SimpleChange
 })
 export class HeaderComponent implements OnInit, OnChanges {
   @Input()
-  sitename = 'Hello World';
+  siteinfo = {
+    sitename: 'Angular 14',
+    subtitle: 'One framework. Mobile & desktop.',
+  };
 
   @Output()
   titleChanged = new EventEmitter<string>();
@@ -15,18 +18,18 @@ export class HeaderComponent implements OnInit, OnChanges {
   counter = 0;
 
   constructor() {
-    console.log('constructor', this.sitename);
+    console.log('constructor', this.siteinfo);
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('onchange', changes['sitename']);
+    console.log('onchange', changes['siteinfo']);
   }
 
   // 一個 callback 方法，在預設的變更檢測器首次檢查 Directive 的資料繫結屬性之後立即執行，
   // 並且在檢查任何 View 或 Content Child 之前。它只在 Directive 實例化時執行一次。
   ngOnInit() {
-    this.sitename = 'Hello World';
-    console.log('oninit', this.sitename);
+    this.siteinfo.sitename = 'Hello World';
+    console.log('oninit', this.siteinfo);
   }
 
   changeTitle(newTitle: string) {

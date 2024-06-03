@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Article } from '../interfaces/article';
+import { subscribeOn } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,10 @@ import { Article } from '../interfaces/article';
 })
 export class AppComponent implements OnInit {
 
-  title = 'Will Home';
+  siteinfo = {
+    sitename: 'Angular 14',
+    subtitle: 'One framework. Mobile & desktop.',
+  };
 
   keyword = 'Angular 14';
 
@@ -35,6 +39,10 @@ export class AppComponent implements OnInit {
 
   confirmKeyword(newKeyword: string) {
     this.keyword = newKeyword;
+  }
+
+  changeName(name: string) {
+    this.siteinfo = { ...this.siteinfo, sitename: name };
   }
 
 }

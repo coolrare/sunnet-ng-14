@@ -26,11 +26,11 @@
     <div class="container">
       <img src="/assets/images/logo.png" class="pull-left logo"
         (click)="changeTitle('The Will Will Web')"
-        [alt]="sitename"
-        [attr.data-testid]="sitename"
-        [title]="sitename">
+        [alt]="siteinfo.sitename"
+        [attr.data-testid]="siteinfo.sitename"
+        [title]="siteinfo.sitename">
       <div class="pull-left">
-        <h1><a href="http://blog.miniasp.com/">{{ sitename }}</a></h1>
+        <h1><a href="http://blog.miniasp.com/">{{ siteinfo.sitename }}</a></h1>
         <h3
           [class.highlight]="counter % 2 == 0"
           [style.color]="counter % 2 == 0 ? 'red' : 'black'"
