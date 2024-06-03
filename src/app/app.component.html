@@ -9,9 +9,9 @@
       <div id="ctl00_cphBody_divError"></div>
       <div id="ctl00_cphBody_PostList1_posts" class="posts">
 
-        <pre>NT${{ 12345 | number }}</pre>
+        <!-- <pre>NT${{ 12345 | number }}</pre> -->
 
-        <pre>{{ data$ | async | json }}</pre>
+        <!-- <pre>{{ data$ | async | json }}</pre> -->
 
         <!-- Article START-->
         <article *ngFor="let item of (data$ | async); let i=index" class="post" id="post{{i}}">
